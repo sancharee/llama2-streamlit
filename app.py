@@ -1,4 +1,4 @@
-import PyPDF2,os
+import os
 import tempfile
 import streamlit as st
 from dotenv import find_dotenv, load_dotenv
@@ -8,17 +8,6 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 # from langchain.callbacks.base import CallbackManager
 
-
-def pdf_to_pages(file):
-        # absfile = os.path.join(path, file)
-        pages = []
-        print(os.getcwd())
-        pdf = PyPDF2.PdfReader(file)
-        for p in range(len(pdf.pages)):
-            page = pdf.pages[p]
-            text = page.extract_text()
-            pages += [text]
-        return pages
 
     
 	    
